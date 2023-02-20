@@ -2,7 +2,6 @@ package project.campsite.controller;
 
 import lombok.Getter;
 import lombok.Setter;
-import project.campsite.domain.member.Address;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -24,9 +23,11 @@ public class MemberForm {
     @NotBlank(message = "비밀번호를 입력해주세요")
     private String password;
 
+    private String checkPW;
+
     private String birth;
-    
-    private String city;
-    private String street;
-    private String Zipcode;
+
+    private String city; //시,도
+    private String street; //지역
+    private String Zipcode; //우편번호
 }
