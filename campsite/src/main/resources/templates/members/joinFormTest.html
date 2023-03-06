@@ -1,0 +1,97 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous">
+</script>
+
+<style>
+.flex-container{
+   display: flex;
+}
+
+</style>
+
+<form role="form" action="/members/new" th:object="${memberForm}" method="post">
+    <div class="mb-3">
+        <label th:for="id">아이디</label>
+        <input class="form-control" placeholder="아이디 입력">
+        <button class="" onclick="">중복확인</button>
+    </div>
+    <div class="mb-3">
+        <label th:for="password">비밀번호</label>
+        <input type="password" class="form-control" placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8~20자)">
+    </div>
+    <div class="mb-3">
+        <label th:for="checkPW">비밀번호 확인</label>
+        <input type="password" class="form-control" placeholder="비밀번호 재입력">
+    </div>
+    <div class="mb-3">
+        <label th:for="username">이름</label>
+        <input type="text" class="form-control" placeholder="이름을 입력해주세요">
+    </div>
+    <div class="mb-3">
+        <label th:for="number">전화번호</label>
+        <input type="number" class="form-control" placeholder="휴대폰 번호 입력('-'제외 11자리 입력)">
+    </div>
+    <div class="mb-3">
+        <label th:for="id">주소</label>
+        <div class="address_input_1_wrap">
+            <div class="address_input_1_box">
+                <input class="form-control" name="address_input1" readonly="readonly" placeholder="우편번호">
+            </div>
+            <div class="address_button">
+                <button class="" onclick="">주소찾기</button>
+            </div>
+        </div>
+        <div class="address_input_2_wrap">
+            <div class="address_input_2_box">
+                <input class="form-control" name="address_input2" readonly="readonly" placeholder="도로명">
+            </div>
+        </div>
+        <div class="address_input_3_wrap">
+            <div class="address_input_3_box">
+                <input class="form-control" name="address_input3" placeholder="상세주소" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label th:for="email">이메일 주소</label>
+        <input type="email" class="form-control" placeholder="name@example.com">
+    </div>
+    <label th:for="birth">생년월일</label>
+    <div class="flex-container">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>년</option>
+            <option value="1">1999</option>
+            <option value="2">2000</option>
+            <option value="3">2001</option>
+        </select>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>월</option>
+            <option value="1">01</option>
+            <option value="2">02</option>
+            <option value="3">03</option>
+        </select>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>일</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <button class="" onclick="">가입하기</button>
+        <button class="" onclick="">가입취소</button>
+    </div>
+</form>
+</body>
+</html>

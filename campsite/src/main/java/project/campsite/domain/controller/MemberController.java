@@ -1,4 +1,4 @@
-package project.campsite.controller;
+package project.campsite.domain.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
